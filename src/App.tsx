@@ -7,6 +7,7 @@ import {
   Linkedin,
   Github,
   Mail,
+  Twitter,
   Search,
   Database,
   Layers,
@@ -69,15 +70,22 @@ const App = () => {
   const [activeDevTab, setActiveDevTab] = useState('conferences');
   const [activePubType, setActivePubType] = useState('All');
 
-  const scholarUrl = "https://scholar.google.com/citations?user=Y707vR4AAAAJ";
+  const scholarUrl = "https://scholar.google.com/citations?user=9rHfgD4AAAAJ";
   const researchGateUrl = "https://www.researchgate.net/profile/Akib-Javed";
 
   const milestones = [
     {
+      year: "2026",
+      title: "Directing Geospatial Research for Water Resilience",
+      org: "Hydrology & Geoinformatics Specialist, C4RE",
+      description: "Directing geospatial research and technical frameworks for evidence-based hydrological project roadmaps. Also serving on UNDP GEF-LDCF (Kiribati coastal hazard risk) and World Bank KOIRAP (climate-resilient urban policy) engagements, plus founding Maplicon consultancy.",
+      reflection: "From national land zoning to cross-border hydrological resilience — geospatial intelligence now drives international development policy."
+    },
+    {
       year: "2025",
       title: "Orchestrating National Spatial Assets",
-      org: "GIS Analyst & Supervisor",
-      description: "Managing a team of 3 analysts to georeference and digitize cadastral maps for national land zoning. Improving manual processing efficiency by 10%.",
+      org: "GIS Analyst & Supervisor, IWM & CPE",
+      description: "Georeferencing and digitizing centuries-old cadastral maps for a national land zoning project, leading a team of 3 analysts and cutting manual processing time by 20%.",
       reflection: "Transitioning from theoretical research to large-scale operational geospatial management."
     },
     {
@@ -121,6 +129,11 @@ const App = () => {
   ];
 
   const certifications = [
+    { title: "Advanced Prompt Engineering Techniques", platform: "LinkedIn", year: "2026" },
+    { title: "How to Be an Agent Boss: Leading AI Agents at Work", platform: "LinkedIn", year: "2026" },
+    { title: "How to Learn a New Topic Quickly", platform: "LinkedIn", year: "2026" },
+    { title: "Power BI: Dashboards for Beginners", platform: "LinkedIn", year: "2026" },
+    { title: "Foundations of Geographic Information Systems (GIS)", platform: "LinkedIn", year: "2026" },
     { title: "AI Python for Beginners", platform: "DeepLearning.AI", year: "2024" },
     { title: "Practical Project Management (PMI, PMP, APM)", platform: "Udemy", year: "2025" },
     { title: "Introduction to Career Skills in Software Development", platform: "LinkedIn", year: "2025" },
@@ -135,8 +148,7 @@ const App = () => {
     { title: "Introduction to Python", platform: "DataCamp", year: "2022" },
     { title: "Learning Excel: Data Analysis", platform: "LinkedIn", year: "2022" },
     { title: "Writing in the Sciences", platform: "Coursera", year: "2022" },
-    { title: "Reviewing in the Sciences", platform: "Clarivate", year: "2022" },
-    { title: "Hyperspectral Image Processing", platform: "ORBITA AEROSPACE", year: "2019" }
+    { title: "Reviewing in the Sciences", platform: "Clarivate", year: "2022" }
   ];
 
   const leadershipRoles = [
@@ -224,7 +236,7 @@ const App = () => {
   const impacts = [
     {
       label: "Research Reach",
-      value: "39",
+      value: "45",
       detail: "Scientific Publications & Items",
       icon: <Globe size={24} />
     },
@@ -236,7 +248,7 @@ const App = () => {
     },
     {
       label: "Conferences",
-      value: "11",
+      value: "6",
       detail: "International conferences attended",
       icon: <Users size={24} />
     },
@@ -254,7 +266,7 @@ const App = () => {
     },
     {
       label: "Certifications",
-      value: "16+",
+      value: "20",
       detail: "Professional development courses",
       icon: <Award size={24} />
     },
@@ -280,9 +292,13 @@ const App = () => {
 
   const publications = [
     { title: "Advancements in deep learning methods for precise weed and rice classification from UAV imagery: a comprehensive review", journal: "Discover Agriculture 4.1", year: "2026", cluster: "Journal" },
+    { title: "DTSM: A UAV-based framework for temporal rice stress detection and growth analysis", journal: "Smart Agricultural Technology", year: "2026", cluster: "Journal" },
+    { title: "Physicochemical, heavy metal, and microbial risk assessment of harvested rainwater in coastal Koyra Upazila, Bangladesh", journal: "Journal of Water, Sanitation and Hygiene for Development", year: "2026", cluster: "Journal" },
+    { title: "Assessment of particulate matter exposure and associated human health risk: Comparison among non-automated, automated and semi-automated rice industry workers", journal: "Journal of Industrial Safety", year: "2026", cluster: "Journal" },
+    { title: "Spatial assessment of lead contamination, essential nutrient status, and ecological and human-health risks in agricultural soils surrounding a used lead-acid battery recycling site in Bangladesh", journal: "Total Environment Advances", year: "2026", cluster: "Journal" },
     { title: "Enhanced urban impervious surface land use mapping using a novel multi-sensor feature fusion method and remote sensing data", journal: "Environmental Earth Sciences 84.9", year: "2025", cluster: "Journal" },
     { title: "Drainage Network Generation for Urban Pluvial Flooding (UPF) Using Generative Adversarial Networks (GANs) and GIS Data", journal: "Sustainability 10", year: "2025", cluster: "Journal" },
-    { title: "Comparative Hydrogeochemical Characterization and Environmental Controls on Groundwater Quality, Irrigation Suitability, and Health Risk across Northern and Coastal Hydrological Settings of Bangladesh", journal: "Cleaner Water", year: "2025", cluster: "Journal" },
+    { title: "Comparative Hydrogeochemical Characterization and Environmental Controls on Groundwater Quality, Irrigation Suitability, and Health Risk across Northern and Coastal Hydrological Settings of Bangladesh", journal: "Cleaner Water", year: "2026", cluster: "Journal" },
     { title: "Geostatistical modeling of soil physicochemical properties and environmental drivers in agro-industrial landuse systems in Bangladesh", journal: "Geomatica 77.2", year: "2025", cluster: "Journal" },
     { title: "Optical-SAR Data Fusion Based on Simple Layer Stacking and the XGBoost Algorithm to Extract Urban Impervious Surfaces in Global Alpha Cities", journal: "Remote Sensing 16.5", year: "2024", cluster: "Journal" },
     { title: "A novel ensemble learning approach to extract urban impervious surface based on machine learning algorithms using SAR and optical data", journal: "International Journal of Applied Earth Observation and Geoinformation 132", year: "2024", cluster: "Journal" },
@@ -750,6 +766,7 @@ const App = () => {
             <a href={scholarUrl} target="_blank" rel="noopener noreferrer" className="footer-social-link" aria-label="Google Scholar Profile"><GraduationCap size={20} /></a>
             <a href={researchGateUrl} target="_blank" rel="noopener noreferrer" className="footer-social-link" aria-label="ResearchGate Profile"><BookOpen size={20} /></a>
             <a href="https://github.com/geoakib" target="_blank" rel="noopener noreferrer" className="footer-social-link" aria-label="GitHub Profile"><Github size={20} /></a>
+            <a href="https://twitter.com/geoakib" target="_blank" rel="noopener noreferrer" className="footer-social-link" aria-label="Twitter Profile"><Twitter size={20} /></a>
             <a href="mailto:akibjaved@outlook.com" className="footer-social-link" aria-label="Send Email"><Mail size={20} /></a>
           </div>
         </div>

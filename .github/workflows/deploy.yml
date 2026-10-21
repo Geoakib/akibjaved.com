@@ -2,7 +2,7 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: ["master"] # Vite default branch is often 'master' or 'main'
+    branches: ["master", "main"] # Vite default branch is often 'master' or 'main'
 
 permissions:
   contents: read

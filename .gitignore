@@ -12,6 +12,10 @@ dist
 dist-ssr
 *.local
 
+# Local dependency cache and personal source docs (CV/photo) — not for GitHub
+.npm-cache/
+supporting_info/
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
