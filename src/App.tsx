@@ -8,6 +8,7 @@ import {
   Github,
   Mail,
   Twitter,
+  ContactRound,
   Search,
   Database,
   Layers,
@@ -768,6 +769,7 @@ const App = () => {
             <a href="https://github.com/geoakib" target="_blank" rel="noopener noreferrer" className="footer-social-link" aria-label="GitHub Profile"><Github size={20} /></a>
             <a href="https://twitter.com/geoakib" target="_blank" rel="noopener noreferrer" className="footer-social-link" aria-label="Twitter Profile"><Twitter size={20} /></a>
             <a href="mailto:akibjaved@outlook.com" className="footer-social-link" aria-label="Send Email"><Mail size={20} /></a>
+            <a href="https://geoakib.github.io/contact/" target="_blank" rel="noopener noreferrer" className="footer-social-link" aria-label="Digital Contact Card" title="Digital Contact Card"><ContactRound size={20} /></a>
           </div>
         </div>
         <div className="footer-info">
