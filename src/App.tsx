@@ -9,6 +9,8 @@ import {
   Mail,
   Twitter,
   ContactRound,
+  Download,
+  ExternalLink,
   Search,
   Database,
   Layers,
@@ -73,6 +75,11 @@ const App = () => {
 
   const scholarUrl = "https://scholar.google.com/citations?user=9rHfgD4AAAAJ";
   const researchGateUrl = "https://www.researchgate.net/profile/Akib-Javed";
+  // The contact card lives in its own Pages repo; same origin, so `download` still works.
+  const contactCardUrl = "https://geoakib.github.io/contact/";
+  const vcardUrl = `${contactCardUrl}contact.vcf`;
+  const cvUrl = `${contactCardUrl}Akib_Javed_CV.pdf`;
+  const resumeUrl = `${contactCardUrl}Akib_Javed_Resume.pdf`;
 
   const milestones = [
     {
@@ -427,23 +434,33 @@ const App = () => {
       {/* 01. Hero Phase */}
       <section className="hero-narrative">
         <motion.div
+          className="hero-inner"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <div className="mono-label hero-mono">Researcher Profile_v2026</div>
-          <h1 className="main-title">akib javed, ph.d.</h1>
-          <p className="hero-reflection">
-            Exploring the hidden patterns of our planet. <br />
-            I bridge the gap between <b>Geospatial Intelligence</b> and <b>Deep Learning</b>
-            to solve urban pluvial flooding, deforestation, and resource scarcity.
-          </p>
-          <div className="badge-group hero-badge-group">
-            <span className="badge blue">GeoAI Specialist</span>
-            <span className="badge">LIESMARS Alumni</span>
-            <span className="badge blue">CSC Scholar</span>
-            <span className="badge consultancy">Consultancy Available</span>
+          <div className="hero-copy">
+            <div className="mono-label hero-mono">Researcher Profile_v2026</div>
+            <h1 className="main-title">akib javed, ph.d.</h1>
+            <p className="hero-reflection">
+              Exploring the hidden patterns of our planet. <br />
+              I bridge the gap between <b>Geospatial Intelligence</b> and <b>Deep Learning</b>
+              to solve urban pluvial flooding, deforestation, and resource scarcity.
+            </p>
+            <div className="badge-group hero-badge-group">
+              <span className="badge blue">GeoAI Specialist</span>
+              <span className="badge">LIESMARS Alumni</span>
+              <span className="badge blue">CSC Scholar</span>
+              <span className="badge consultancy">Consultancy Available</span>
+            </div>
           </div>
+          <img
+            className="hero-portrait"
+            src={`${import.meta.env.BASE_URL}portrait.jpg`}
+            alt="Portrait of Akib Javed"
+            width={280}
+            height={280}
+          />
         </motion.div>
       </section>
 
@@ -755,6 +772,43 @@ const App = () => {
               <p>ArcGIS Pro, QGIS, Earth Engine, Cloud-Native.</p>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Digital Contact Card */}
+      <section className="contact-card-section">
+        <div className="mono-label section-header">Digital Contact Card</div>
+        <div className="contact-card-panel">
+          <div>
+            <h3 className="contact-card-title">Save my details in one tap</h3>
+            <p className="contact-card-copy">
+              Scan the code with a phone camera, or take the documents with you.
+            </p>
+            <div className="contact-actions">
+              <a className="contact-btn contact-btn-primary" href={vcardUrl} download="Akib_Javed.vcf">
+                <ContactRound size={18} /> Save Contact
+              </a>
+              <a className="contact-btn" href={cvUrl} download="Akib_Javed_CV.pdf">
+                <Download size={18} /> Download CV
+              </a>
+              <a className="contact-btn" href={resumeUrl} download="Akib_Javed_Resume.pdf">
+                <Download size={18} /> Download Résumé
+              </a>
+              <a className="contact-btn" href={contactCardUrl} target="_blank" rel="noopener noreferrer">
+                <ExternalLink size={18} /> Full Contact Card
+              </a>
+            </div>
+          </div>
+          <a className="contact-qr" href={contactCardUrl} target="_blank" rel="noopener noreferrer">
+            <img
+              src={`${import.meta.env.BASE_URL}contact-qr.png`}
+              alt="QR code linking to the contact vCard"
+              width={180}
+              height={180}
+              loading="lazy"
+            />
+            <span className="mono-label">Scan to save</span>
+          </a>
         </div>
       </section>
 

@@ -31,6 +31,28 @@
   margin-top: 3rem;
 }
 
+/* Hero portrait: wraps below the copy on narrow screens rather than needing a breakpoint */
+.hero-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3rem;
+  flex-wrap: wrap;
+}
+
+.hero-copy {
+  flex: 1 1 420px;
+}
+
+.hero-portrait {
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid var(--border-active);
+  box-shadow: 0 0 0 10px rgba(0, 112, 243, 0.05), 0 24px 48px rgba(0, 0, 0, 0.45);
+}
+
 /* Journey Section */
 .journey-section {
   padding: 6rem 0;
@@ -122,6 +144,82 @@
 .stack-category-label {
   color: var(--text-pure);
   margin-bottom: 1rem;
+}
+
+/* Digital Contact Card */
+.contact-card-section {
+  padding: 6rem 0;
+  border-top: 1px solid var(--border-dim);
+}
+
+.contact-card-panel {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3rem;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+  padding: 2.5rem;
+  background: var(--bg-panel);
+  border: 1px solid var(--border-dim);
+}
+
+.contact-card-title {
+  font-size: 1.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.contact-card-copy {
+  max-width: 46ch;
+  margin-bottom: 1.75rem;
+}
+
+.contact-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.contact-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.25rem;
+  border: 1px solid var(--border-active);
+  color: var(--text-pure);
+  text-decoration: none;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  transition: var(--transition-smooth);
+}
+
+.contact-btn:hover {
+  border-color: var(--accent-hyper);
+  background: rgba(0, 112, 243, 0.08);
+}
+
+.contact-btn-primary {
+  background: var(--accent-hyper);
+  border-color: var(--accent-hyper);
+}
+
+.contact-btn-primary:hover {
+  background: transparent;
+}
+
+.contact-qr {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  flex: 0 0 auto;
+}
+
+.contact-qr img {
+  width: 180px;
+  height: 180px;
+  padding: 8px;
+  background: #FFFFFF;
 }
 
 /* Footer Lab */
@@ -391,6 +489,16 @@
 
   .project-content-grid {
     grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .hero-portrait {
+    width: 200px;
+    height: 200px;
+  }
+
+  .contact-card-panel {
+    padding: 1.5rem;
     gap: 2rem;
   }
 }
